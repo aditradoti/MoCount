@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WELCOME MOCOUNT</title>
+	<title>WELCOME MOCOUNT</title> 
 	<link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="<?php echo base_url();?>assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="<?php echo base_url();?>assets/images/icons/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
@@ -20,7 +20,7 @@
       </button>
       <img src="<?php echo base_url();?>assets/images/logo.jpg" class="img-responsive">
     </div>
-    
+    //head
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
