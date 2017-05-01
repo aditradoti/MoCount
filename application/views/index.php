@@ -20,7 +20,6 @@
       </button>
       <img src="<?php echo base_url();?>assets/images/logo.jpg" class="img-responsive">
     </div>
-    //head
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -45,10 +44,10 @@
 		<form class="navbar-form " action="<?php echo base_url();?>login/cek_login" method="POST">
 		    <div class="form-group">
         
-		  		<input type="text" class="form-control" placeholder="Username" name="username">
+		  		<input type="text" class="form-control" placeholder="USERNAME" name="username">
 		    </div><br><br>
 		    <div class="form-group">
-		    	<input type="password" class="form-control" placeholder="Password" name="password">
+		    	<input type="password" class="form-control" placeholder="PASSWORD" name="password">
 		    </div><br><br>
 		   	<input type="submit" class="btn btn-primary"  value="LOGIN"></input>
 		</form>
