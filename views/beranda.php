@@ -14,6 +14,8 @@ foreach ($pemasukan as $isi){
 foreach ($pengeluaran as $isi){
   $out = $out + $isi->nominal;
 }
+$sisa = $in-$out;
+
 
 ?>
 <div class="content">
@@ -23,7 +25,7 @@ foreach ($pengeluaran as $isi){
 		<span><h4>Your Money Count</h4></span>
 		<div>
 			<label>SISA SIMPANAN :</label>
-			<div class="bek">Rp. <?php echo ($in-$out)?></div>
+			<div class="bek">Rp. <?php echo number_format($sisa,2,',','.');?></div>
 		</div><br><br>
 		
 		<div class="bek">
