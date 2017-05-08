@@ -32,5 +32,23 @@ class keinginan extends CI_Controller {
 			echo  "<script> alert('data gagal Disimpan');location='".base_url()."keinginan/tambah_keinginan'</script>";
       }
 	}
+  public function showSaran($q, $nominal){
+    $pembagi = 0;
+    switch($q){
+      case "Mingguan":
+        $pembagi = 7;
+        break;
+      case "Bulanan":
+        $pembagi = 30;
+        break;
+      case "Tahunan":
+        $pembagi = 364;
+        break;
+    }
+    echo "
+          <label>Saran :</label>
+          <textarea class='form-control' name='saran'>"; 
+    echo "Menabung ".($nominal/$pembagi)."/hari </textarea>";
+  }
 }
 //commend 

@@ -34,3 +34,28 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<script>
+    function showSaran(str) {
+        var nominal = 0;
+        nominal = nominal + document.getElementById("nominal").value;
+        if (str == "") {
+            document.getElementById("cicilan").innerHTML = "";
+            return;
+        } else { 
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 || this.readyState == "complete") {
+                    document.getElementById("saran").innerHTML = this.responseText;
+                }
+            };
+            <?php echo 'xmlhttp.open("GET", "'.base_url().'keinginan/showSaran/"+str+"/"+nominal,true);';?>
+            xmlhttp.send();
+        }
+    }
+</script>

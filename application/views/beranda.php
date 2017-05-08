@@ -5,6 +5,19 @@
   ?>
 
 <?php include ('header.php'); ?>
+<?php 
+$in = 0;
+$out = 0;
+foreach ($pemasukan as $isi){
+  $in = $in + $isi->nominal;
+}
+foreach ($pengeluaran as $isi){
+  $out = $out + $isi->nominal;
+}
+$sisa = $in-$out;
+
+
+?>
 <div class="content">
 <br>
 	<CENTER><H1>WELCOME <?php echo $this->session->userdata('namalengkap'); ?></H1>
@@ -12,13 +25,13 @@
 		<span><h4>Your Money Count</h4></span>
 		<div>
 			<label>SISA SIMPANAN :</label>
-			<div class="bek">Rp. 3.000.000</div>
+			<div class="bek">Rp. <?php echo number_format($sisa,2,',','.');?></div>
 		</div><br><br>
 		
 		<div class="bek">
 			Informasi Pemasukan
 		</div><br>
-		<table class="table">
+		<table class="table table-bordered">
 		  <tr class="active">
 		  	<th>ID PEMASUKAN</th>
 		  	<th>ID USER</th>
@@ -31,7 +44,7 @@
 		  <?php
                   if (empty($pemasukan))
                   {
-                    echo "<tr><td colspan=\"6\">Data tidak tersedia</td></tr>";
+                    echo "<tr><td colspan=\"7\">Data tidak tersedia</td></tr>";
                   }else
                   {
                      foreach ($pemasukan as $isi)
@@ -69,7 +82,7 @@
 		  <?php
                   if (empty($pengeluaran))
                   {
-                    echo "<tr><td colspan=\"6\">Data tidak tersedia</td></tr>";
+                    echo "<tr><td colspan=\"7\">Data tidak tersedia</td></tr>";
                   }else
                   {
                      foreach ($pengeluaran as $isi)

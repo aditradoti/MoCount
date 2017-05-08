@@ -5,7 +5,6 @@
 	<div class="data">
 	<div class="content">
 	<div class="form-login" >
-	
 	<H2>TAMBAH PENYIMPANAN</H2>
 		<form class="navbar-form" action="<?php echo base_url();?>penyimpanan/simpan_penyimpanan" method="POST">
 		    <div class="form-group">
@@ -24,6 +23,7 @@
 	</div>
 	</div>
 	</CENTER>
+	
 </div>
 </body>
 </html>

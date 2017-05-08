@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01 Mei 2017 pada 10.13
+-- Generation Time: 07 Mei 2017 pada 05.48
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -40,7 +40,8 @@ CREATE TABLE `keinginan` (
 --
 
 INSERT INTO `keinginan` (`id_keinginan`, `id_user`, `nominal`, `namapenyimpanan`, `cicilan`, `saran`) VALUES
-(1, 3, 450000, 'Warung Kantin', 'Harian', 'crververf');
+(1, 3, 450000, 'Warung Kantin', 'Harian', 'crververf'),
+(2, 3, 50000, 'Dompet', 'Mingguan', 'Menabung 7142.8571428571/hari ');
 
 -- --------------------------------------------------------
 
@@ -125,17 +126,19 @@ CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `namalengkap` varchar(50) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `jenisuser` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `namalengkap`, `username`, `password`) VALUES
-(1, 'user ini ya', 'user', 'ee11cbb19052e40b07aac0ca060c23ee'),
-(2, 'andre b', 'andre', '19984dcaea13176bbb694f62ba6b5b35'),
-(3, 'user lagi', 'user1', '24c9e15e52afc47c225b757e7bee1f9d');
+INSERT INTO `user` (`id_user`, `namalengkap`, `username`, `password`, `jenisuser`) VALUES
+(1, 'user ini ya', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', '0'),
+(2, 'andre b', 'andre', '19984dcaea13176bbb694f62ba6b5b35', 'admin'),
+(3, 'user lagi', 'user1', '24c9e15e52afc47c225b757e7bee1f9d', 'user'),
+(5, 'aditya radotti', 'juple', 'e61ad86ce2888bd03094ef69e6510e8a', 'user');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +182,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `keinginan`
 --
 ALTER TABLE `keinginan`
-  MODIFY `id_keinginan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_keinginan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `pemasukan`
 --
@@ -199,7 +202,7 @@ ALTER TABLE `penyimpanan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

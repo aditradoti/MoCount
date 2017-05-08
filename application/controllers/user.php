@@ -21,7 +21,8 @@ class user extends CI_Controller {
           'id_user'     => $this->input->post('id_user'),
           'namalengkap'     => $this->input->post('namalengkap'),
           'username'   => $this->input->post('username'),                                              
-           'password'         => md5($this->input->post('password'))
+           'password'         => md5($this->input->post('password')),
+           'jenisuser'         => '0'
            );
 
             $hasil=$this->m_user->simpan_data_user($data);
@@ -42,5 +43,43 @@ class user extends CI_Controller {
     $data['pengeluaran'] = $this->m_pengeluaran->view_all($id);
     $data['keinginan'] = $this->m_keinginan->view_all($id);
     $this->load->view('beranda', $data);
+  }
+
+  public function home(){
+    $this->index();
+  }
+
+  // untuk hapus
+    function konfirm_hapus($id_user)
+  {
+    echo "<script>
+
+    var txt;
+    var r = confirm('Tekan OK untuk menghapus !');
+    if (r == true) {
+        window.location.href = '".base_url()."user/hapus_user/".$id_user."';
+
+    } else {
+      window.location.href = '".base_url()."user/tampil_semua';
+    }
+    
+</script>";
+    //$data_user['datauser']=$this->m_user->konfirm_hapus($id_user);
+    //$this->load->view('konfirmhapususer',$data_user);
+  }
+  function hapus_user($id_user)
+  {
+    $hasil=$this->m_user->hapus_data_user($id_user);
+     if ($hasil){
+    echo "<script> alert('data berhasil Dihapus');location='".base_url()."admin'</script>";
+   }else{
+    echo  "<script> alert('data gagal Dihapus');location='".base_url()."admin'</script>";
+   }
+    redirect('admin');
+  }
+
+  function terima_user($id_user){
+  $this->m_user->terima($id_user); 
+  redirect('admin');
   }
 }
