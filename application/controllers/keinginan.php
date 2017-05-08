@@ -51,3 +51,4 @@ class keinginan extends CI_Controller {
     echo "Menabung ".($nominal/$pembagi)."/hari </textarea>";
   }
 }
+//commend 
